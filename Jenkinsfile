@@ -9,8 +9,11 @@ label 'nodejs'
 }
 
 }
-
 stages {
+
+stage('Run Tests') {
+
+parallel {
 
 stage('Backend Tests') {
 
@@ -27,6 +30,10 @@ stage('Frontend Tests') {
 steps {
 
 sh 'node ./frontend/test.js'
+
+}
+
+}
 
 }
 
